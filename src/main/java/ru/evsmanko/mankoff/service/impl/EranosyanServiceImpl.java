@@ -12,11 +12,14 @@ import ru.evsmanko.mankoff.service.EranosyanService;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class EranosyanServiceImpl implements EranosyanService {
+
+    private final double ZERO_AMOUNT = 0.0;
 
     private final UserRepository userRepository;
     private final CreditRepository creditRepository;
@@ -32,9 +35,16 @@ public class EranosyanServiceImpl implements EranosyanService {
         List<Credit> credits = creditRepository.findAllByUserId(user.getId());
         List<Debit> debits = debitRepository.findAllByUserId(user.getId());
 
-        double creditsSum = credits.stream().map(Credit::getAmount).reduce(Double::sum).orElse(-1.0);
-        double debitsSum = debits.stream().map(Debit::getAmount).reduce(Double::sum).orElse(-1.0);
+        double creditsSum = getSum(credits, Credit::getAmount);
+        double debitsSum = getSum(debits, Debit::getAmount);
 
         return creditsSum > debitsSum;
+    }
+
+    private <T> double getSum(List<T> list, Function<T, Double> getAmount) {
+        return list.stream()
+                .map(getAmount)
+                .reduce(Double::sum)
+                .orElse(ZERO_AMOUNT);
     }
 }
