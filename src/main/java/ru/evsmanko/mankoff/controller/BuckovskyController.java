@@ -18,14 +18,9 @@ public class BuckovskyController {
     @GetMapping("/test/{id}")
     public String task2(@PathVariable long id) {
         log.info("START endpoint buckovsky-service/creditSum");
-        double creditsum = buckovskyService.creditSum(id);
-        log.info(String.valueOf(creditsum));
+        String resultCreditSum = buckovskyService.creditSum(id);
+        log.info(String.valueOf(resultCreditSum));
         log.info("END endpoint buckovsky-service/creditSum");
-        if (creditsum == -1){
-            return ("User doesn't exist");
-        }
-        else{
-            return (String.valueOf(creditsum));
-        }
+        return resultCreditSum;
     }
 }

@@ -16,16 +16,16 @@ import java.util.List;
 public class BuckovskyServiceImpl implements BuckovskyService{
     private final CreditRepository creditRepository;
     private final UserRepository userRepository;
-    public double creditSum(long id){
+    public String creditSum(long id){
         User user = userRepository.getUserById(id);
         if (user == null){
-            return -1;
+            return "User doesn't exist";
         }
         double sumCredit = 0;
         List<Credit> creditList = creditRepository.findAllByUserId(id);
         for (Credit credit : creditList) {
             sumCredit += credit.getAmount();
         }
-        return sumCredit;
+        return String.valueOf(sumCredit);
     }
 }
