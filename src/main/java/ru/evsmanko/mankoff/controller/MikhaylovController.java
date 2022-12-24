@@ -11,15 +11,15 @@ import ru.evsmanko.mankoff.service.MikhaylovService;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("buckovsky-service")
+@RequestMapping("Mikhaylov")
 public class MikhaylovController {
     private final MikhaylovService MikhaylovService;
 
-    @GetMapping("/test/{id}")
-    public String task2(@PathVariable long id) {
-        log.info("START endpoint buckovsky-service/creditSum, id: {}", id);
-        String response = MikhaylovService.debitRemains(id);
-        log.info("END endpoint buckovsky-service/creditSum, response: {}", response);
+    @GetMapping("/debitRemains")
+    public String task3() {
+        log.info("START endpoint buckovsky-service/debitRemains");
+        String response = MikhaylovService.debitRemains();
+        log.info("END endpoint buckovsky-service/debitRemains, response: {}", response);
         return response;
     }
 }
