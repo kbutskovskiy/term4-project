@@ -38,10 +38,9 @@ public class BuckovskyServiceImpl implements BuckovskyService{
             sumCredit += credit.getAmount();
         }
         switch (currency) {
-            case ("RUB") -> sumCredit *= coefficientRUB;
-            case ("EUR") -> sumCredit *= coefficientEUR;
-            case ("USD") -> sumCredit *= coefficientUSD;
+            case ("EUR") -> sumCredit *= coefficientEUR / coefficientRUB;
+            case ("USD") -> sumCredit *= coefficientUSD / coefficientRUB;
         }
-        return String.valueOf(sumCredit);
+        return (String.valueOf(sumCredit) + " " + currency);
     }
 }
