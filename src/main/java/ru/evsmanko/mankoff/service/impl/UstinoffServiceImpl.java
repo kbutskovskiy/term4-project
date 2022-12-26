@@ -1,7 +1,6 @@
 package ru.evsmanko.mankoff.service.impl;
 import com.google.gson.GsonBuilder;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.evsmanko.mankoff.entity.User;
 import ru.evsmanko.mankoff.repository.UserRepository;
@@ -10,7 +9,6 @@ import ru.evsmanko.mankoff.service.UstinoffService;
 import java.io.FileWriter;
 import java.io.IOException;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UstinoffServiceImpl implements UstinoffService {
