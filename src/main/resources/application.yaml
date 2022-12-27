@@ -7,3 +7,9 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
+
+app:
+  currency: USD
+  USD: 1
+  RUB: 70
+  EUR: 1.1
