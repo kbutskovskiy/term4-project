@@ -17,9 +17,9 @@ public class MikhaylovController {
 
     @GetMapping("/debitRemains")
     public String task3() {
-        log.info("START endpoint buckovsky-service/debitRemains");
+        log.info("START endpoint dz9");
         String response = MikhaylovService.debitRemains();
-        log.info("END endpoint buckovsky-service/debitRemains, response: {}", response);
+        log.info("END endpoint dz9, response: {}", response);
         return response;
     }
 }
