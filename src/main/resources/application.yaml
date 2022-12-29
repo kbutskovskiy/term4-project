@@ -7,19 +7,15 @@ spring:
     generate-ddl: true
     hibernate:
       ddl-auto: update
-<<<<<<< src/main/resources/application.yaml
 dz9:
   currency: EUR
   USD: 1
   RUB: 70
   EUR: 1.1
-=======
 
->>>>>>> src/main/resources/application.yaml
 app:
   currency: USD
   USD: 1
   RUB: 70
-<<<<<<< src/main/resources/application.yaml
   EUR: 1.1
->>>>>>> src/main/resources/application.yaml
+  jsonName: ustinoff
