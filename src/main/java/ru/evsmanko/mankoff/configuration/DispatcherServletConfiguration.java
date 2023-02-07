@@ -10,7 +10,7 @@ public class DispatcherServletConfiguration extends AbstractAnnotationConfigDisp
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {BuckovskySpringMVCConfiguration.class};
+        return new Class[] {SpringMVCConfiguration.class};
     }
 
     @Override
