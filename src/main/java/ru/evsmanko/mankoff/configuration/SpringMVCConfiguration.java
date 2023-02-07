@@ -13,14 +13,14 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
-@ComponentScan("ru.evsmanko.mankoff.controller.BuckovskyController")
+@ComponentScan("ru.evsmanko.mankoff.controller")
 @EnableWebMvc
-public class BuckovskySpringMVCConfiguration implements WebMvcConfigurer {
+public class SpringMVCConfiguration implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
 
     @Autowired
-    public BuckovskySpringMVCConfiguration(ApplicationContext applicationContext) {
+    public SpringMVCConfiguration(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
 
