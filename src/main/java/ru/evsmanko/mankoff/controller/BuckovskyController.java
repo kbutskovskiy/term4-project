@@ -23,10 +23,4 @@ public class BuckovskyController {
         return response;
     }
 
-    @GetMapping("/user")
-    public String userInfo(){
-        log.info("START endpoint buckovsky-service/user");
-        log.info("END endpoint buckovsky-service/user");
-        return "user";
-    }
 }
