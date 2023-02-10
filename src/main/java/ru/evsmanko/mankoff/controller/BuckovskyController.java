@@ -22,4 +22,5 @@ public class BuckovskyController {
         log.info("END endpoint buckovsky-service/creditSum, response: {}", response);
         return response;
     }
+
 }
