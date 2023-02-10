@@ -10,11 +10,11 @@ public class DispatcherServletConfiguration extends AbstractAnnotationConfigDisp
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] {SpringMVCConfiguration.class};
+        return new Class[]{SpringMVCConfiguration.class};
     }
 
     @Override
     protected String[] getServletMappings() {
-        return new String[] {"/"};
+        return new String[]{"/"};
     }
 }
