@@ -2,9 +2,29 @@
 <html lang="ru">
 <head>
     <title>Информация о банке</title>
+    <style>
+        h {
+            color : white;
+            font-family: "Times New Roman";
+            font-size: 300%;
+            font-style: normal;
+        }
+        p {
+            color : black;
+            font-family: "Times New Roman";
+            font-size: 100%;
+        }
+        body {
+            background-image: url("https://cdn.bcs-express.ru/article-head/6564.png");
+        }
+    </style>
 </head>
 <body>
-<h1  class="Wrapper-sc-6nwvzq-0 GZPhq sc-ctaXho flKVCC" color="#000000" font-weight="bold">Информация о банке</h1>
-<div color="#000000" class="Wrapper-sc-1vydk7-0 Bwaux">МТС Банк (ПАО «МТС-Банк») – универсальный коммерческий банк, основанный в 1993 году. Действует на основании Генеральной лицензии №2268, выданной Банком России 17.12.2014 г. Входит в число 50 ведущих банков России по величине активов. Основными акционерами являются Частная компания с ограниченной ответственностью Мобайл ТелеСистемс Б.В. – дочерняя компания ПАО «Мобильные ТелеСистемы».</div>
+<div style="text-align: center;">
+    <h th:text="${header}">
+
+    </h>
+</div>
+    <p th:text="${about}"></p>
 </body>
 </html>
