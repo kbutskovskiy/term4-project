@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>User Info</title>
+    <style>
+        h1{
+            color: white;
+            background-color: red;
+            font-weight: 1000;
+        }
+        li{
+            font-size: 20px;
+            font-family: 'Nunito', sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <header align="center" ><h1>Информация о пользователе<br>Кирилл Буцковский</h1></header>
+<header align="center" ><h1>Информация о пользователе<br><th:block th:text="${nameAndSurname}">nameAndSurname</th:block></h1></header>
     <ul>
-        <li>Баланс на карте: 1240 руб.</li>
-        <li>Баланс на вкладе: 56300 руб. ( процентная ставка 4% )</li>
-        <li>Баланс на телефоне: 2 руб. (тариф "БЕЗЛИМИТ")</li>
-        <li>Сумма кредита: 5600 руб.</li>
+        <li>Баланс на карте: <th:block th:text="${cardBalance}">cardBalance</th:block> руб.</li>
+        <li>Баланс на вкладе: <th:block th:text="${depositBalance}">depositBalance</th:block> руб. ( процентная ставка 4% )</li>
+        <li>Баланс на телефоне: <th:block th:text="${phoneBalance}">phoneBalance</th:block> руб. (тариф "БЕЗЛИМИТ")</li>
+        <li>Сумма кредита: <th:block th:text="${creditSum}">creditSum</th:block> руб.</li>
     </ul>
     <footer><a href = "index.html">На главную</a></footer>
 </body>
