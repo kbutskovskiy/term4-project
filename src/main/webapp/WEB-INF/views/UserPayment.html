@@ -16,13 +16,13 @@
     </thead>
     <tbody>
     <tr th:if="${payments.empty}">
-        <td colspan="2"> No Books Available </td>
+        <td colspan="2"> No Payments Available </td>
     </tr>
     <tr th:each="payment : ${payments}">
-        <td><span th:text="${payment.paymentId}"> PaymentId </span></td>
-        <td><span th:text="${payment.MCCCode}"> MCCCode </span></td>
+        <td><span th:text="${payment.userId}"> UserId </span></td>
+        <td><span th:text="${payment.mccCode}"> MCCCode </span></td>
         <td><span th:text="${payment.amount}"> Amount </span></td>
-        <td><span th:text="${payment.TimeStamp}"> TimeStamp </span></td>
+        <td><span th:text="${payment.timeStamp}"> TimeStamp </span></td>
     </tr>
     </tbody>
 </table>

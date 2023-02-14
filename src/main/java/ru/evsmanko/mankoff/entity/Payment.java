@@ -15,9 +15,9 @@ import lombok.Setter;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private long userId;
-    private long paymentId;
-    private int MCCCode;
+    private int mccCode;
     private double amount;
     private double timeStamp;
 }
