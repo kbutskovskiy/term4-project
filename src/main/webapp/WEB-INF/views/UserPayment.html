@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th> PaymentId </th>
+        <th> MCCCode </th>
+        <th> Amount </th>
+        <th> TimeStamp </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${payments.empty}">
+        <td colspan="2"> No Books Available </td>
+    </tr>
+    <tr th:each="payment : ${payments}">
+        <td><span th:text="${payment.paymentId}"> PaymentId </span></td>
+        <td><span th:text="${payment.MCCCode}"> MCCCode </span></td>
+        <td><span th:text="${payment.amount}"> Amount </span></td>
+        <td><span th:text="${payment.TimeStamp}"> TimeStamp </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
