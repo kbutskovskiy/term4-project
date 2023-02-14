@@ -3,7 +3,6 @@ package ru.evsmanko.mankoff.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
@@ -18,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserInfoController {
     private final PaymentService paymentService;
-    private final PaymentRepository paymentRepository;
     @GetMapping("/user")
     public String showUserInfo(Model model) {
         model.addAttribute("nameAndSurname", "Кирилл Буцковский");
@@ -40,6 +38,6 @@ public class UserInfoController {
     public Payment savePayment(@RequestBody Payment payment){
         log.info("START save endpoint");
         log.info("END save endpoint");
-        return paymentRepository.save(payment);
+        return paymentService.save(payment);
     }
 }

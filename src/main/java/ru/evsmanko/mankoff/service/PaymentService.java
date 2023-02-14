@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface PaymentService {
     List<Payment> getPaymentsById(long userId);
+    Payment save(Payment payment);
 }
