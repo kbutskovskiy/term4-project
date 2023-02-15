@@ -35,9 +35,11 @@ public class UserInfoController {
     }
 
     @PostMapping("/save")
-    public void savePayment(@RequestBody Payment payment){
+    public String savePayment(@RequestBody Payment payment, Model model){
         log.info("START save endpoint");
+        log.info(String.valueOf(paymentService.save(payment).getId()));
+        model.addAttribute("payments", paymentService.getPaymentsById(payment.getUserId()));
         log.info("END save endpoint");
-        System.out.print(paymentService.save(payment).getId());
+        return "UserPayment";
     }
 }

@@ -14,6 +14,7 @@ import lombok.Setter;
 @Table(name = "payment")
 public class Payment {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private long userId;
     private int mccCode;
