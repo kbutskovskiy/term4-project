@@ -1,23 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="ISO-8859-1">
+    <style>
+    body{
+        background: #eb7360;
+    }
+    h1{
+        font-family: inherit;
+        font-weight: bold;
+        align-content: center;
+    }
+    p{
+        font-family: inherit;
+        font-weight: bold;
+        font-size: 20px;
+        align-self: center;
+    }
+    .wrapper {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        background: aqua;
+        filter: drop-shadow(0 0 5px black);
+    }
+    </style>
     <title>Mankoff's Contacts</title>
 </head>
 <body>
-Mankoff's Contacts:<br>
-<br>
-country: Russia<br>
-city: Moscow<br>
-Andropov avenue, 18, building 1<br>
-<br>
-Private clients:<br>
-Telephone 1: 8 800 250-0-520 (if you call outside all Russian cities)<br>
-Telephone 2: +7 495 777-000-1 (if you call outside Moscow region)<br>
-<br>
-Business clients:<br>
-Telephone: 8 800 250-0-199<br>
-<br>
-All phone numbers are toll free!<br>
+<div class="wrapper">
+    <h1>Mankoff's Contacts:</h1>
+    <p><br> Address: <td th:text="${fullAddress}"></td><br>
+    <br> Private clients:<br>
+    <br> Telephone 1: <td th:text="${telephonePrivate1}"></td><br>
+    <br> Telephone 2: <td th:text="${telephonePrivate2}"></td><br>
+    <br> Business clients: <br>
+    <br> Telephone 1: <td th:text="${telephoneBusiness1}"></td><br>
+    <br> All phone numbers are toll free!<br></p>
+</div>
 </body>
 </html>
