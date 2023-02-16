@@ -9,6 +9,7 @@
     <thead>
     <tr>
         <th> PaymentId </th>
+        <th> UserId </th>
         <th> MCCCode </th>
         <th> Amount </th>
         <th> TimeStamp </th>
@@ -19,6 +20,7 @@
         <td colspan="2"> No Payments Available </td>
     </tr>
     <tr th:each="payment : ${payments}">
+        <td><span th:text="${payment.id}"> PaymentId </span></td>
         <td><span th:text="${payment.userId}"> UserId </span></td>
         <td><span th:text="${payment.mccCode}"> MCCCode </span></td>
         <td><span th:text="${payment.amount}"> Amount </span></td>
