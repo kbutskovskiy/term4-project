@@ -21,7 +21,6 @@ public class UserController {
         return userInfo;
     }
 
-
     @GetMapping("/all")
     public ArrayList<UserInfo> getAllUsers(){
         return userInfoService.findAll();

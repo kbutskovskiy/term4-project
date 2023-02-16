@@ -1,13 +1,9 @@
-
-
 package ru.evsmanko.mankoff.service.impl;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.evsmanko.mankoff.entity.UserInfo;
 import ru.evsmanko.mankoff.repository.UserInfoRepository;
 import ru.evsmanko.mankoff.service.UserInfoService;
-
 import java.util.ArrayList;
 import java.util.Optional;
 
