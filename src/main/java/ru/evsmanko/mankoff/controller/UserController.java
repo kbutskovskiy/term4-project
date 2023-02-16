@@ -1,8 +1,7 @@
 package ru.evsmanko.mankoff.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import ru.evsmanko.mankoff.entity.UserInfo;
 import ru.evsmanko.mankoff.service.UserInfoService;
