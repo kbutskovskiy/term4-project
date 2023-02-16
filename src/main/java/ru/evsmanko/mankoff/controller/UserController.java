@@ -25,7 +25,7 @@ public class UserController {
         return userInfoService.findAll();
     }
     @PostMapping("/save")
-    public void saveUserInfo(UserInfo userInfo){
+    public void saveUserInfo(@RequestBody UserInfo userInfo){
         userInfoService.save(userInfo);
     }
 }
