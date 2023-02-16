@@ -19,5 +19,4 @@ public class UserController {
     public ArrayList<UserInfo> getAllUsers(){
         return userInfo.findAll();
     }
-
 }

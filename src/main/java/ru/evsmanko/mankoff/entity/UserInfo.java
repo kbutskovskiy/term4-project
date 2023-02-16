@@ -14,6 +14,7 @@ import lombok.Setter;
 @Table(name="users")
 public class UserInfo {
     @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String firstName;

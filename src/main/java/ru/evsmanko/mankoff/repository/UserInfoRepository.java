@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface UserInfoRepository extends CrudRepository<UserInfo,Long> {
     ArrayList<UserInfo> findAll();
    // Optional<UserInfo> findUserInfoByUserId(long id);
-    UserInfo save(UserInfo userInfo);
+    //UserInfo save(UserInfo userInfo);
 }

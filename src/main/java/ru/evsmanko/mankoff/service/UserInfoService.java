@@ -8,5 +8,5 @@ import java.util.Optional;
 public interface UserInfoService {
    ArrayList<UserInfo> findAll();
  //  Optional<UserInfo> findUserInfoByUserId(long id);
-   UserInfo save();
+   //UserInfo save();
 }
