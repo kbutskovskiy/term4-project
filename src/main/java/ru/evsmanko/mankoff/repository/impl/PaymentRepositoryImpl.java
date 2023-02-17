@@ -21,7 +21,8 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     private final JdbcTemplate jdbcTemplate;
     @Override
     public ArrayList<Payment> findAll() {
-        return null;
+        return (ArrayList<Payment>) jdbcTemplate.query("select id, userId, mccCode, amount, timeStamp",
+                this::mapRowToPayment);
     }
 
     @Override
