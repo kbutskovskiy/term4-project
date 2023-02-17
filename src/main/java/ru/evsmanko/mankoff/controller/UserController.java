@@ -2,30 +2,36 @@ package ru.evsmanko.mankoff.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.evsmanko.mankoff.entity.UserInfo;
 import ru.evsmanko.mankoff.service.UserInfoService;
 
 import java.util.ArrayList;
-import java.util.Optional;
+import java.util.List;
 
-@RestController
-@RequestMapping(value = "/userinfo")
+@Controller
 @RequiredArgsConstructor
 public class UserController {
     private final UserInfoService userInfoService;
     @GetMapping("/{id}")
-    public Optional<UserInfo> getUserInfoById(@PathVariable long id){
-        Optional<UserInfo> userInfo = userInfoService.findUserInfoById(id);
-        return userInfo;
+    public String getUserInfoById(@PathVariable long id, Model model){
+        List<UserInfo> userInfo = userInfoService.findUserInfoById(id);
+        model.addAttribute("userInfo",userInfo);
+        return "info";
     }
 
+    @ResponseBody
     @GetMapping("/all")
-    public ArrayList<UserInfo> getAllUsers(){
-        return userInfoService.findAll();
+    public ArrayList<UserInfo> getAllUsers(Model model){
+        ArrayList<UserInfo> usersInfo = userInfoService.findAll();
+        model.addAttribute("userInfo");
+        return usersInfo;
     }
     @PostMapping("/save")
-    public void saveUserInfo(@RequestBody UserInfo userInfo){
+    public String saveUserInfo(@RequestBody UserInfo userInfo,Model model){
         userInfoService.save(userInfo);
+        model.addAttribute("userInfo",userInfoService.findUserInfoById(userInfo.getId()));
+        return "info";
     }
 }

@@ -5,6 +5,7 @@ import ru.evsmanko.mankoff.entity.UserInfo;
 import ru.evsmanko.mankoff.repository.UserInfoRepository;
 import ru.evsmanko.mankoff.service.UserInfoService;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,7 +20,7 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public Optional<UserInfo> findUserInfoById(long id) {
+    public List<UserInfo> findUserInfoById(long id) {
         return userInfoRepository.findUserInfoById(id);
     }
 
