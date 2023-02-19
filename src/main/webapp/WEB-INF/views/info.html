@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Информация о банке</title>
+    <title>Информация о пользователе</title>
     <style>
         h {
             color : white;
@@ -20,11 +20,22 @@
     </style>
 </head>
 <body>
-<div style="text-align: center;">
-    <h th:text="${header}">
-
-    </h>
-</div>
-    <p th:text="${about}"></p>
+<h1>Информация о пользователях</h1>
+<table>
+    <tr>
+        <th>id</th>
+        <th>first name</th>
+        <th>second name</th>
+        <th>age</th>
+        <th>city</th>
+    </tr>
+    <tr th:each="user : ${userInfo}">
+        <td th:text="${user.id}">id</td>
+        <td th:text="${user.firstName}">first name</td>
+        <td th:text="${user.secondName}">second name</td>
+        <td th:text="${user.age}">age</td>
+        <td th:text="${user.city}">city</td>
+    </tr>
+</table>
 </body>
 </html>
