@@ -14,10 +14,13 @@ import lombok.Setter;
 @Table(name = "payment")
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @Column(name = "USERID")
     private long userId;
+    @Column(name = "MCCCODE")
     private int mccCode;
+    @Column(name = "AMOUNT")
     private double amount;
+    @Column(name = "TIMESTAMP")
     private double timeStamp;
 }
