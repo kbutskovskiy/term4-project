@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <style>
+    body{
+        background: #eb7360;
+    }
+    h1{
+        font-family: inherit;
+        font-weight: bold;
+        align-content: center;
+    }
+
+    .wrapper {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        background: aqua;
+        filter: drop-shadow(0 0 5px black);
+    }
+    </style>
+    <title>New Transaction</title>
+</head>
+<body>
+<h1>Enter new transaction information:</h1>
+<form th:method="POST" th:object="${newTransfer}" th:action="@{/new-transfer}">
+    <div class="wrapper">
+        <label for="senderId">Sender ID: </label>
+        <input type="text" th:field="*{senderId}" id="senderId">
+        <br>
+        <label for="recieverId">Reciever ID: </label>
+        <input type="text" th:field="*{recieverId}" id="recieverId">
+        <br>
+        <label for="amount">Amount of money (in USD) </label>
+        <input type="text" th:field="*{amount}" id="amount">
+        <br>
+        <input type="submit" value="Send information"/>
+    </div>
+</form>
+</body>
+</html>
