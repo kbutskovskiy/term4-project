@@ -34,7 +34,7 @@ public class UserInfoController {
         return "UserPayment";
     }
 
-    @PostMapping("/save")
+    @PostMapping("/save/payment")
     public String savePayment(@RequestBody Payment payment, Model model){
         log.info("START save endpoint");
         log.info(String.valueOf(paymentService.save(payment).getId()));
