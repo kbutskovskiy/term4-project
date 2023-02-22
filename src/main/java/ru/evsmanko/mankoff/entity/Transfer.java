@@ -6,13 +6,20 @@ import lombok.*;
 @Setter
 @Getter
 @Entity
-@Table(name = "tranfers")
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "TRANSFER")
 public class Transfer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long transferId;
+
+    @Column(name="ID")
+    private long id;
+    @Column(name="SENDER_ID")
     private long senderId;
+    @Column(name="RECIEVER_ID")
     private long recieverId;
+    @Column(name="AMOUNT")
     private double amount;
+    @Column(name="TIME_STAMP")
     private double timeStamp=1;
 }
