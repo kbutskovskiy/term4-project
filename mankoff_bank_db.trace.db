@@ -1711,3 +1711,20 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
 	at ru.evsmanko.mankoff.MankoffApplication.main(MankoffApplication.java:12)
+2023-02-19 19:22:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "TIMESTAMP '2023-02-19 19:22:31.647' (TRANFERS: ""TIME_STAMP"" FLOAT(53) NOT NULL)"
+Data conversion error converting "TIMESTAMP '2023-02-19 19:22:31.647' (TRANFERS: ""TIME_STAMP"" FLOAT(53) NOT NULL)"; SQL statement:
+insert into tranfers (amount, reciever_id, sender_id, time_stamp, transfer_id) values (?, ?, ?, ?, ?) [22018-214]
+2023-02-19 19:28:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "TIMESTAMP '2023-02-19 19:28:34.878' (TRANFERS: ""TIME_STAMP"" FLOAT(53) NOT NULL)"
+Data conversion error converting "TIMESTAMP '2023-02-19 19:28:34.878' (TRANFERS: ""TIME_STAMP"" FLOAT(53) NOT NULL)"; SQL statement:
+insert into tranfers (amount, reciever_id, sender_id, time_stamp, transfer_id) values (?, ?, ?, ?, ?) [22018-214]
+2023-02-19 19:41:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "DOUBLE PRECISION to TIMESTAMP"
+Data conversion error converting "DOUBLE PRECISION to TIMESTAMP" [22018-214]
+2023-02-19 19:41:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "DOUBLE PRECISION to TIMESTAMP"
+Data conversion error converting "DOUBLE PRECISION to TIMESTAMP" [22018-214]
+2023-02-19 19:43:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "DOUBLE PRECISION to TIMESTAMP"
+Data conversion error converting "DOUBLE PRECISION to TIMESTAMP" [22018-214]

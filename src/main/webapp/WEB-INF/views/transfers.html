@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <style>
+    body{
+        background: #eb7360;
+    }
+    h1{
+        font-family: inherit;
+        font-weight: bold;
+        align-content: center;
+    }
+
+    .wrapper {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        background: aqua;
+        filter: drop-shadow(0 0 5px black);
+    }
+    </style>
+    <title>Mankoff's Contacts</title>
+</head>
+<body>
+<div class="wrapper">
+    <h1>Transfers Information:</h1>
+    <table>
+        <tr>
+            <th>Transfer ID</th>
+            <th>Sender ID</th>
+            <th>Reciever ID</th>
+            <th>Amount</th>
+            <th>Timestamp</th>
+        </tr>
+        <tr th:each="transfers : ${transfersList}">
+            <td th:text="${transfers.transferId}"></td>
+            <td th:text="${transfers.senderId}"></td>
+            <td th:text="${transfers.recieverId}"></td>
+            <td th:text="${transfers.amount}"></td>
+            <td th:text="${transfers.timeStamp}"></td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

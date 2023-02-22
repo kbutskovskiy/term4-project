@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "ru.evsmanko.mankoff")
 public class MankoffApplication {
 
     public static void main(String[] args) {
