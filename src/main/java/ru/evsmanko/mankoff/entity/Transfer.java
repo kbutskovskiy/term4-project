@@ -11,8 +11,6 @@ import lombok.*;
 @Table(name = "TRANSFER")
 public class Transfer {
     @Id
-
-    @Column(name="ID")
     private long id;
     @Column(name="SENDER_ID")
     private long senderId;
