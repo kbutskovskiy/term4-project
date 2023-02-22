@@ -6,7 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import ru.evsmanko.mankoff.dto.PaymentDTO;
 import ru.evsmanko.mankoff.entity.Payment;
+import ru.evsmanko.mankoff.mapper.PaymentMapper;
 import ru.evsmanko.mankoff.repository.PaymentRepository;
 import ru.evsmanko.mankoff.service.PaymentService;
 

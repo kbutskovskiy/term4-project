@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import ru.evsmanko.mankoff.dto.PaymentDTO;
 import ru.evsmanko.mankoff.entity.Payment;
 import ru.evsmanko.mankoff.repository.PaymentRepository;
 
@@ -34,19 +35,19 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     }
 
     @Override
-    public Payment save(Payment payment) {
+    public PaymentDTO save(PaymentDTO paymentDTO) {
         jdbcTemplate.update(
                 "insert into Payment (id, userId, mccCode, amount, timeStamp) values(?, ?, ?, ?, ?)",
-                payment.getId(),
-                payment.getUserId(),
-                payment.getMccCode(),
-                payment.getAmount(),
-                payment.getTimeStamp());
-        return payment;
+                paymentDTO.getId(),
+                paymentDTO.getUserId(),
+                paymentDTO.getMccCode(),
+                paymentDTO.getAmount(),
+                paymentDTO.getTimeStamp());
+        return paymentDTO;
     }
 
     private Payment mapRowToPayment(ResultSet row, int rowNum)
-        throws SQLException{
+            throws SQLException{
         return new Payment(row.getLong("id"), row.getLong("userId"), row.getInt("mccCode"),
                 row.getDouble("amount"), row.getDouble("timeStamp"));
     }
