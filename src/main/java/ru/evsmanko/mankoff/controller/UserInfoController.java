@@ -37,10 +37,11 @@ public class UserInfoController {
     }
 
     @PostMapping("/save/payment")
-    public String savePayment(@RequestBody Payment payment, Model model){
+    public String savePayment(@RequestBody PaymentDTO paymentDTO, Model model){
         log.info("START save endpoint");
-        log.info(String.valueOf(paymentService.save(payment).getId()));
-        model.addAttribute("payments", paymentService.getPaymentsById(payment.getUserId()));
+        long id = paymentService.save(paymentDTO).getId();
+        log.info("payment: {}", id);
+        model.addAttribute("payments", paymentService.getPaymentsById(paymentDTO.getUserId()));
         log.info("END save endpoint");
         return "UserPayment";
     }
