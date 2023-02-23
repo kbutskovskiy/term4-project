@@ -12,5 +12,5 @@ public interface PaymentRepository {
     ArrayList<Payment> findAll();
 
     List<Payment> getPaymentsByUserId(long userId);
-    PaymentDTO save(PaymentDTO paymentDTO);
+    Payment save(Payment payment);
 }

@@ -23,7 +23,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public PaymentDTO save(PaymentDTO paymentDTO){
-        return paymentRepository.save(paymentDTO);
+    public Payment save(PaymentDTO paymentDTO){
+        return paymentRepository.save(PaymentMapper.INSTANCE.mapDTOtoEntity(paymentDTO));
     }
 }
