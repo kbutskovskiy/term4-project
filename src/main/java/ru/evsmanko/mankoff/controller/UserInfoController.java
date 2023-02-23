@@ -6,7 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import ru.evsmanko.mankoff.dto.PaymentDTO;
 import ru.evsmanko.mankoff.entity.Payment;
+import ru.evsmanko.mankoff.mapper.PaymentMapper;
 import ru.evsmanko.mankoff.repository.PaymentRepository;
 import ru.evsmanko.mankoff.service.PaymentService;
 
@@ -34,11 +36,12 @@ public class UserInfoController {
         return "UserPayment";
     }
 
-    @PostMapping("/save")
-    public String savePayment(@RequestBody Payment payment, Model model){
+    @PostMapping("/save/payment")
+    public String savePayment(@RequestBody PaymentDTO paymentDTO, Model model){
         log.info("START save endpoint");
-        log.info(String.valueOf(paymentService.save(payment).getId()));
-        model.addAttribute("payments", paymentService.getPaymentsById(payment.getUserId()));
+        long id = paymentService.save(paymentDTO).getId();
+        log.info("payment: {}", id);
+        model.addAttribute("payments", paymentService.getPaymentsById(paymentDTO.getUserId()));
         log.info("END save endpoint");
         return "UserPayment";
     }
