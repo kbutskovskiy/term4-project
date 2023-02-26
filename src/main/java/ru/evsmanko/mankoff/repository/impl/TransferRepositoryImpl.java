@@ -29,15 +29,8 @@ public class TransferRepositoryImpl implements TransferRepository {
     }
     @Override
     public Transfer save(Transfer transfer){
-        List<Transfer> tempList= findAll();
-        long maxId = 0;
-        for (int i=0; i<tempList.size();i++){
-            if (tempList.get(i).getId()>maxId){
-                maxId=tempList.get(i).getId();
-            }
-        }
-        jdbcTemplate.update("INSERT INTO TRANSFER (ID, SENDER_ID, RECIEVER_ID, AMOUNT, TIME_STAMP) VALUES(?,?,?,?,?)", ++maxId, transfer.getSenderId(), transfer.getRecieverId(),transfer.getAmount(), transfer.getTimeStamp());
-        transfer.setId(maxId);
+
+        jdbcTemplate.update("INSERT INTO TRANSFER (SENDER_ID, RECIEVER_ID, AMOUNT, TIME_STAMP) VALUES(?,?,?,?)", transfer.getSenderId(), transfer.getRecieverId(),transfer.getAmount(), transfer.getTimeStamp());
         return transfer;
     }
 }

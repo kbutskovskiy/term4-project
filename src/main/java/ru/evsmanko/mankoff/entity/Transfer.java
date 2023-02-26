@@ -11,6 +11,7 @@ import lombok.*;
 @Table(name = "TRANSFER")
 public class Transfer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name="SENDER_ID")
     private long senderId;
