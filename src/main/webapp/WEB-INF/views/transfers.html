@@ -35,7 +35,7 @@
             <th>Timestamp</th>
         </tr>
         <tr th:each="transfers : ${transfersList}">
-            <td th:text="${transfers.transferId}"></td>
+            <td th:text="${transfers.id}"></td>
             <td th:text="${transfers.senderId}"></td>
             <td th:text="${transfers.recieverId}"></td>
             <td th:text="${transfers.amount}"></td>

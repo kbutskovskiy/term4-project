@@ -7,7 +7,7 @@ import java.util.List;
 
 
 @Repository
-public interface TransferRepository extends JpaRepository<Transfer,Long> {
+public interface TransferRepository {
     List<Transfer> findAll();
     List<Transfer> getTransfersBySenderId(long senderId);
     Transfer save(Transfer transfer);
