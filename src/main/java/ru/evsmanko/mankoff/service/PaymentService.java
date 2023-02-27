@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface PaymentService {
     List<Payment> getPaymentsById(long userId);
-    PaymentDTO save(PaymentDTO paymentDTO);
+    Payment save(PaymentDTO paymentDTO);
 }
