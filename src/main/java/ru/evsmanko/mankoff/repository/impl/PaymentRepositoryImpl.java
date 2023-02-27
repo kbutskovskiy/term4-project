@@ -23,7 +23,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     private final JdbcTemplate jdbcTemplate;
     @Override
     public ArrayList<Payment> findAll() {
-        List<Payment> payments =  jdbcTemplate.query("select id, userId, mccCode, amount, timeStamp from Payment",
+        List<Payment> payments =  jdbcTemplate.query("select ID, USER_ID, MCC_CODE, AMOUNT, TIME_STAMP from PAYMENT_NEW",
                 this::mapRowToPayment);
         return new ArrayList<Payment>(payments);
     }
@@ -31,15 +31,14 @@ public class PaymentRepositoryImpl implements PaymentRepository {
     @Override
     public List<Payment> getPaymentsByUserId(long userId) {
         return jdbcTemplate.query(
-                "select id, userId, mccCode, amount, timeStamp from Payment where userId=?",
+                "select ID, USER_ID, MCC_CODE, AMOUNT, TIME_STAMP from PAYMENT_NEW where USER_ID=?",
                 this::mapRowToPayment, userId);
     }
 
     @Override
     public Payment save(Payment payment) {
         jdbcTemplate.update(
-                "insert into Payment (id, userId, mccCode, amount, timeStamp) values(?, ?, ?, ?, ?)",
-                payment.getId(),
+                "insert into PAYMENT_NEW (USER_ID, MCC_CODE, AMOUNT, TIME_STAMP) values(?, ?, ?, ?)",
                 payment.getUserId(),
                 payment.getMccCode(),
                 payment.getAmount(),
@@ -49,7 +48,7 @@ public class PaymentRepositoryImpl implements PaymentRepository {
 
     private Payment mapRowToPayment(ResultSet row, int rowNum)
             throws SQLException{
-        return new Payment(row.getLong("id"), row.getLong("userId"), row.getInt("mccCode"),
-                row.getDouble("amount"), row.getDouble("timeStamp"));
+        return new Payment(row.getLong("id"), row.getLong("user_Id"), row.getInt("mcc_Code"),
+                row.getDouble("amount"), row.getDouble("time_Stamp"));
     }
 }
