@@ -11,16 +11,17 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "payment")
+@Table(name = "PAYMENT_NEW")
 public class Payment {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "USERID")
+    @Column(name = "USER_ID")
     private long userId;
-    @Column(name = "MCCCODE")
+    @Column(name = "MCC_CODE")
     private int mccCode;
     @Column(name = "AMOUNT")
     private double amount;
-    @Column(name = "TIMESTAMP")
+    @Column(name = "TIME_STAMP")
     private double timeStamp;
 }
