@@ -15,7 +15,7 @@ import ru.evsmanko.mankoff.service.BuckovskyService;
 public class BuckovskyController {
     private final BuckovskyService buckovskyService;
 
-    @GetMapping("/test/{id}")
+    @GetMapping("/credit/{id}")
     public String task2(@PathVariable long id) {
         log.info("START endpoint buckovsky-service/creditSum, id: {}", id);
         String response = buckovskyService.creditSum(id);

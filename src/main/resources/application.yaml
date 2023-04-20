@@ -14,7 +14,7 @@ dz9:
   EUR: 1.1
 
 app:
-  currency: USD
+  currency: RUB
   USD: 1
   RUB: 70
   EUR: 1.1

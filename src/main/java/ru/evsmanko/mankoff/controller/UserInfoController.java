@@ -26,7 +26,22 @@ public class UserInfoController {
         model.addAttribute("depositBalance", "56300");
         model.addAttribute("creditSum", "5600");
         model.addAttribute("phoneBalance", "2");
-        return "UserInfo";
+        return "index";
+    }
+
+    @GetMapping("/tyagach")
+    public String showTyag(){
+        return "tyag";
+    }
+
+    @GetMapping("/auto")
+    public String showAuto(){
+        return "automixer";
+    }
+
+    @GetMapping("/about")
+    public String showAbout(){
+        return "about";
     }
 
     @GetMapping("/payment/{id}")

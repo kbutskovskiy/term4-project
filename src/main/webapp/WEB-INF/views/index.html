@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang = "ru">
+<head>
+  <meta charset="utf-8">
+  <title>Сайт по спецтехнике</title>
+  <link rel="stylesheet" href = "index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+  <!--<script type="text/javascript">
+    var counter = 0;
+    var delay = 3000;
+    var path = "C:/Users/kbuts/OneDrive/Рабочий стол/HTML/";
+    var tech = new Array("Tyagach.jpg", "pogr1.jpg", "Automixer.jpg");
+    function rotatorMany() {
+      document.getElementById("rotator_many_1").src = path + tech[counter];
+      counter++;
+      if (counter == tech.length) counter = 0;
+      setTimeout(rotatorMany, delay);
+    }
+  </script>-->
+
+</head>
+<body onload="rotatorMany()">
+
+<article class="content">
+  <h1>АТЛАНТ</h1>
+</article>
+
+<article id="about">
+  <h1>О компании</h1>
+  <p>Наша миссия:<br>
+    Повышение эффективности бизнеса клиентов за счет доступности надежной техники и качественного сервиса
+    “АТЛАНТ” специализируется на поставках техники китайского бренда XCMG.
+    Компания специализируется только на XCMG, что позволило добиться наиболее высокого уровня экспертности при подборе, показе, обслуживании и ремонте техники</p>
+</article>
+
+<article id="catalog">
+  <h1>Каталог</h1>
+</article>
+
+<nav class="navigation">
+  <ul>
+    <li>Дорожная техника:
+    <li class="under"><a href = "http://localhost:8080/tyagach">Погрузчик Volvo FH</a></li>
+    <li class="under"><a href = "http://localhost:8080/auto">Автомиксер Fiori DB 460 SL</a></li>
+    </li>
+    <li>Погрузчики:
+    <li class="under"><a href="http://localhost:8080/about">Погрузчик SDLG 953</a></li></li>
+  </ul>
+</nav>
+
+<img src="https://fleet-auto.ru/wp-content/uploads/2015/12/Mercedes-Benz-Actros-4163-SLT-e1450700201997.jpg"/>
+
+<!--<table id = "slide">
+  <tr>
+    <td>Имеющаяся спецтехника</td>
+  </tr>
+  <tr>
+    <td>
+      <img src="C:\Users\kbuts\OneDrive\Рабочий стол\HTML\Tyagach.jpg" width = "1200" height = "600" id="rotator_many_1" alt="" />
+    </td>
+  </tr>
+</table>-->
+
+<style>
+  /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /*
+
+  -------------------------------------------------------------------------------
+
+  это сброс в CSS (сверху), чтобы была кроссбраузерность ( сайт работал одинаково во всех браузерах ).
+  этот сброс можно найти на сайте https://meyerweb.com/eric/tools/css/reset/
+
+  -------------------------------------------------------------------------------
+
+  */
+
+  body{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 242, 230);
+    background-repeat: no-repeat;
+    overflow-y: scroll;
+  }
+
+  .content{
+    font-size: 500%;
+    height: 30%;
+    padding-left: 630px;
+    font-family: fantasy;
+    color: rgb(53, 45, 57);
+    background-color: rgb(255, 12, 0);
+  }
+
+  li{
+    padding-top: 5px;
+    font-weight: 300;
+    font-size: 30px;
+    color: rgb(53, 45, 57);
+    margin-left: 10px;
+    font-family: sans-serif;
+  }
+
+  a{
+    font-size: 30px;
+    color: rgb(53, 45, 57);
+    text-decoration: underline;
+    margin-left: 10px;
+    font-family: sans-serif;
+  }
+
+  .navigation{
+    width: 50%;
+    height: 300px;
+    color: rgb(53, 45, 57);
+    background-color: rgb(177, 237, 232);
+  }
+
+  #copy_right{
+    margin-left: 1200px;
+  }
+
+  footer{
+    height: 75px;
+    font-size: 20px;
+    margin-top: 100px;
+    color: rgb(255, 242, 230);
+    background-color: rgb(109, 67, 90);
+  }
+
+  #catalog{
+    width: 50%;
+    background-color: rgb(177, 237, 232);
+    color: rgb(53, 45, 57);
+    font-size: 50px;
+    font-weight: 200;
+    float: left;
+  }
+
+  .under{
+    padding-left: 40px;
+  }
+
+  #about{
+    width: 30%;
+    height: 20%;
+    float: right;
+    padding-right: 200px;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #slide{
+    margin-left: 100px;
+    margin-top: 50px;
+    font-size: 200%;
+    height: 30%;
+    font-family: fantasy;
+  }
+
+</style>
+
+<footer>
+  <p>Телефон: 8-924-444-44-42</p>
+  <p id="copy_right">&copy; Компания "Атлант"</p>
+</footer>
+</body>
+</html>
